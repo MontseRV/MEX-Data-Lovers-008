@@ -1,7 +1,7 @@
 const data = POKEMON.pokemon;//Traer la data y guardarla en una variable
 
 //const botonNombre = document.getElementById("ButtonA")
-const tarjetas =document.getElementById("tarjetas-pokemon")
+const tarjetas =document.getElementById("tarjetas-pokemon");
 
 const imprimData = (data) => { //variable para manipular la data
     let str = "";
@@ -15,18 +15,18 @@ const imprimData = (data) => { //variable para manipular la data
         <p class= "p1"> Tipo: ${element.type}
         Caramelos: ${element.candy_count} </p>
         
-        </div>`
+        </div>`;
     });
 
-    tarjetas.innerHTML =str
-}
-imprimData(data)
+    tarjetas.innerHTML =str;
+};
+imprimData(data);
 
 
 //filtrar por nombre
 
-const botonNombre = document.getElementById("boton-nombre")
-const pokemonName = document.getElementById("input-pokemon")
+const botonNombre = document.getElementById("boton-nombre");
+const pokemonName = document.getElementById("input-pokemon");
 
 
 botonNombre.addEventListener('click' ,() => {
@@ -38,27 +38,25 @@ imprimData(nameResult);
     
 //filtrar por tipo
 
-const pokemonList = document.getElementById("type-list")
+const pokemonList = document.getElementById("type-list");
 
 pokemonList.addEventListener("change", () => {
     let typePokemon = pokemonList.value;
     let typeResult = window.pokemon.filterType(data,typePokemon);
-    imprimData(typeResult)
+    imprimData(typeResult);
 } );
 
 //ordenar de la a-z
 
-const orderName= document.getElementById("order-list")
+const orderName= document.getElementById("order-list");
 
 orderName.addEventListener("change", () => {
     let aZza = orderName.value;
     let orderResult = window.pokemon.orderAzza(data,aZza);
-    imprimData(orderResult)
+    imprimData(orderResult);
     } 
     );
     
-   
-
 
 (function(){
     var actualizarHora = function(){
@@ -102,17 +100,17 @@ orderName.addEventListener("change", () => {
            
            if(horas == 0){
             horas = 12;
-           };
+           }
    
            pHoras.textContent = horas;
            pAMPM.textContent = ampm;
    
-             if(minutos <10){ minutos = "0" + minutos};
-             if(segundos < 10){ segundos = "0" + segundos};
+             if(minutos <10){ minutos = "0" + minutos;}
+             if(segundos < 10){ segundos = "0" + segundos;}
            pMinutos.textContent = minutos;
            pSegundos.textContent = segundos;
    
     };
     actualizarHora();
     var intervalo = setInterval(actualizarHora, 1000);
-   }())
+   }());

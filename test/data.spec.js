@@ -74,7 +74,7 @@ describe('pokemon', () => {
 });
 
 describe('pokemon.filterName', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     expect(typeof window.pokemon.filterName).toBe('function');
   });
 
@@ -88,7 +88,7 @@ describe('pokemon.filterName', () => {
 });
 
 describe('pokemon.filterType', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     expect(typeof window.pokemon.filterType).toBe('function');
   });
 
@@ -100,3 +100,18 @@ describe('pokemon.filterType', () => {
     expect(window.pokemon.filterType(pokeMock,"Water")).toEqual([pokeMock[1,2]]);
   });
 });
+
+describe('pokemon.orderAzza', () => {
+  it('is a function', () => {
+    expect(typeof window.pokemon.orderAzza).toBe('function');
+  });
+
+  it('returns `debería retornar un arreglo`', () => {
+    expect(window.pokemon.orderAzza([]) instanceof Array).toBe(true);
+  });
+
+  it('returns `debería de retornar un arreglo con el tipo ingresado`', () => {
+    expect(window.pokemon.orderAzza(pokeMock, "Z-A")).toEqual([pokeMock[2,1,0]]);
+  });
+});
+
