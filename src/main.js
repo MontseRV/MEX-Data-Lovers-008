@@ -57,8 +57,6 @@ orderName.addEventListener("change", () => {
     } 
     );
     
-   
-
 
 (function(){
     var actualizarHora = function(){
