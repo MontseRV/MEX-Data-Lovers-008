@@ -20,10 +20,7 @@ const imprimData = (data) => { //variable para manipular la data
     tarjetas.innerHTML =str
 }
 imprimData(data)
-// botonNombre.addEventListener("click", imprimData)
 
-const seccionPrinci =document.getElementById("seccion-principal")
-const seccionNombre = document.getElementById("resultado-nombre")
 
 //filtrar por nombre
 
@@ -31,20 +28,20 @@ const botonNombre = document.getElementById("boton-nombre")
 const pokemonName = document.getElementById("input-pokemon")
 
 
-botonNombre.addEventListener('click' , () => {
-    let nameResult= "";
-    let textPokemon = pokemonName.value.toLowerCase();
-    nameResult = data.filter(pokemon => pokemon.name.toLowerCase() == textPokemon)
-    imprimData(nameResult)
+botonNombre.addEventListener('click' ,() => {
+let nameResult= "";
+let textPokemon = pokemonName.value.toLowerCase();
+nameResult =  window.filterName(data,textPokemon);
+imprimData(nameResult);
 });
-
+    
 //filtrar por tipo
 
 const pokemonList = document.getElementById("type-list")
 
 pokemonList.addEventListener("change", () => {
     let typePokemon = pokemonList.value;
-    let typeResult =data.filter(pokemon => pokemon.type[0] == typePokemon)
+    let typeResult = window.filterType(data,typePokemon)
     imprimData(typeResult)
 } );
 
