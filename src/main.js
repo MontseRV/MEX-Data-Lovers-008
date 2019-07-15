@@ -7,12 +7,13 @@ const imprimData = (data) => { //variable para manipular la data
     let str = "";
     data.forEach(element =>{ //forEach sirve para recorrer los arreglos dentro de un objeto
 
+
         str += `<div class = "col-4 box"> 
         <img src="${element.img}"></img>
         <p class= "p2">${element.name}</p> 
-        <p>Hora: ${element.spawn_time} </p>
-        <p class= "p1">Tipo: ${element.type}</p>
-        <p class= "p1">Caramelos: ${element.candy_count} </p>
+        <p> ${element.spawn_time} </p>
+        <p class= "p1"> Tipo: ${element.type}
+        Caramelos: ${element.candy_count} </p>
         
         </div>`
     });
@@ -75,5 +76,62 @@ orderName.addEventListener("change", () => {
     } 
     );
     
-    
+   
 
+
+(function(){
+    var actualizarHora = function(){
+           var fecha = new Date(),
+               horas = fecha.getHours(),
+               ampm,
+               minutos = fecha.getMinutes(), 
+               segundos = fecha.getSeconds(), 
+               diaSemana = fecha.getDay(), 
+               dia = fecha.getDate(), 
+               mes = fecha.getMonth(), 
+               year = fecha.getFullYear();
+   
+   
+               var pHoras = document.getElementById('horas'),
+               pAMPM = document.getElementById('ampm'),
+               pMinutos = document.getElementById('minutos'),
+               pSegundos = document.getElementById('segundos'),
+               pDiaSemana = document.getElementById('diaSemana'),
+               pDia = document.getElementById('dia'),
+               pMes = document.getElementById('mes'),
+               pYear = document.getElementById('year');
+   
+            var semana = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+            pDiaSemana.textContent = semana[diaSemana];
+   
+            pDia.textContent = dia;
+   
+            var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+   
+            pMes.textContent = meses[mes];
+   
+            pYear.textContent = year;
+   
+            if(horas >= 12){
+             horas = horas - 12;
+             ampm = 'PM';
+            }else{
+             ampm = 'AM';
+            }
+           
+           if(horas == 0){
+            horas = 12;
+           };
+   
+           pHoras.textContent = horas;
+           pAMPM.textContent = ampm;
+   
+             if(minutos <10){ minutos = "0" + minutos};
+             if(segundos < 10){ segundos = "0" + segundos};
+           pMinutos.textContent = minutos;
+           pSegundos.textContent = segundos;
+   
+    };
+    actualizarHora();
+    var intervalo = setInterval(actualizarHora, 1000);
+   }())
