@@ -32,7 +32,7 @@ const pokemonName = document.getElementById("input-pokemon")
 botonNombre.addEventListener('click' ,() => {
 let nameResult= "";
 let textPokemon = pokemonName.value.toLowerCase();
-nameResult =  window.filterName(data,textPokemon);
+nameResult =  window.pokemon.filterName(data,textPokemon);
 imprimData(nameResult);
 });
     
@@ -42,7 +42,7 @@ const pokemonList = document.getElementById("type-list")
 
 pokemonList.addEventListener("change", () => {
     let typePokemon = pokemonList.value;
-    let typeResult = window.filterType(data,typePokemon)
+    let typeResult = window.pokemon.filterType(data,typePokemon);
     imprimData(typeResult)
 } );
 
@@ -52,27 +52,8 @@ const orderName= document.getElementById("order-list")
 
 orderName.addEventListener("change", () => {
     let aZza = orderName.value;
-    if (aZza == "A-Z"){
-        const result= data.sort((a,b)=>{
-            if (a.name.toLowerCase() < b.name.toLowerCase()
-            ) return -1;
-            if (a.name.toLowerCase() > b.name.toLowerCase()
-            ) return 1;
-            return 0
-        });
-        imprimData(result);
-    } 
-    else {
-        const result= data.sort((a,b)=>{
-            if (a.name.toLowerCase() > b.name.toLowerCase()
-            ) return -1;
-            if (a.name.toLowerCase() < b.name.toLowerCase()
-            ) return 1;
-            return 0
-        })
-        imprimData(result);
-    }
-
+    let orderResult = window.pokemon.orderAzza(data,aZza);
+    imprimData(orderResult)
     } 
     );
     

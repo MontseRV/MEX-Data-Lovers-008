@@ -5,15 +5,44 @@
 //   return 'example';
 // };
 
-let filterName= (data, textPokemon)=>{
-  let nameResult =  data.filter(pokemon => pokemon.name.toLowerCase() == textPokemon);
-  return nameResult;
-  };
- window.filterName= filterName;
+window.pokemon={
 
-let filterType= (data,typePokemon) =>{
- let typeResult = data.filter(pokemon => pokemon.type[0] == typePokemon);
- return typeResult;
- };
-window.filterType= filterType;
+  filterName: (data, textPokemon)=>{
+    let nameResult =  data.filter(pokemon => pokemon.name.toLowerCase() == textPokemon);
+    return nameResult;
+    },
+
+  filterType: (data,typePokemon) =>{
+    let typeResult = data.filter(pokemon => pokemon.type[0] == typePokemon);
+    return typeResult;
+    },
+
+  orderAzza: (data, aZza)=>{
+    if (aZza == "A-Z"){
+      const result= data.sort((a,b)=>{
+          if (a.name.toLowerCase() < b.name.toLowerCase()
+          ) return -1;
+          if (a.name.toLowerCase() > b.name.toLowerCase()
+          ) return 1;
+          return 0
+      });
+      imprimData(result);
+  } 
+  else {
+      const result= data.sort((a,b)=>{
+          if (a.name.toLowerCase() > b.name.toLowerCase()
+          ) return -1;
+          if (a.name.toLowerCase() < b.name.toLowerCase()
+          ) return 1;
+          return 0
+      })
+      imprimData(result);
+  }
+  }
+};
+
+
+ 
+
+
 
