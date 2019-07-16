@@ -107,6 +107,10 @@ body {
 
 }
 
+.center{
+  align-content: center
+}
+
 .box {
     /* box-shadow: 15 px 15 px 130 px #666; */
     font-family: Helvetica, sans-serif;

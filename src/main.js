@@ -24,10 +24,8 @@ imprimData(data);
 
 
 //filtrar por nombre
-
 const botonNombre = document.getElementById("boton-nombre");
 const pokemonName = document.getElementById("input-pokemon");
-
 
 botonNombre.addEventListener('click' ,() => {
 let nameResult= "";

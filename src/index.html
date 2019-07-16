@@ -9,26 +9,24 @@
     <link rel="stylesheet" href="https://use.typekit.net/qsv3ymq.css">
   </head>
     <body>
-      <select= "container">
+      <div class= "container">
         <div class="row">
             <div class="col-3">
+            </div>
+
+              <div class="col-6 image">              
+                <div> <img src="pokeball.png" class= "imageP"></div>
               </div>
-               <div class="col-6 image">              
-               <div> <img src="pokeball.png" class= "imageP"></div>
-               </div>
 
               
               
-               <div class="row one">
-
-                  <div class="col-2 menubutton">
-                    <center>
+              <div class="row one">
+                 <div class="col-2 menubutton center">
                  <button class= "boton" id= "Information" type= "button"> ¿Qué es hora Pokémon?</button>
-                </center>
-                  </div>
+              </div>
                                  
-                              <center>
-                  <div class="col-2">                   
+                              
+                  <div class="col-2 center">                   
                     <select class="boton" id ="type-list">   
                     <option value="Grass">Hierba</option>
                     <option value="Poison">Veneno</option>
@@ -45,39 +43,29 @@
                     <option value="Ghost">Fantasma</option>
                     <option value="Psychic">Psíquico</option>
                     <option value="Fighting">Peleador</option> 
-                  </center>
-                </select>
-            
+                    </select>
                   </div>
                 
                              
                                  
-                   <div class="col-2 menubutton">
-                    <center>
-                      <select class="boton " id ="order-list">
-                     <option value="A-Z">A-Z</option>
-                          <option value="Z-A">Z-A</option>
-                      </select>
-                    </center>
+                  <div class="col-2 menubutton center">
+                     <select class="boton " id ="order-list">
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                     </select>
                   </div>
                   
-                  <div class="col-2 menubutton">
-                      <center>
-                    <section class="hora"> <button class= "boton" id= "ButtonB" type= "button"> Estadísticas</button></section>
-                        </center>
+                  <div class="col-2 menubutton center">
+                    <section class="hora"> <button class= "boton" type= "button"> Estadísticas</button>
+                    </section>
                   </div>
   
-                  <div class="col-2 menubutton">
-                    <center>
-                     <div class="hora"></div><p><input type="text" placeholder= "Escribe el nombre"id="input-pokemon"> <button class= "boton" type="button" id="boton-nombre">Buscar</button></p>
+                  <div class="col-2 menubutton center">
+                     <div class="hora"><p><input type="text" placeholder= "Escribe el nombre" id="input-pokemon"> <button class= "boton" type="button" id="boton-nombre">Buscar</button></p>
                      </div>
-                    </center>
-                     </div>
+                  </div>
                              
   <!-- cierra row --> </div> 
-              
-              
-              
               
               
               
@@ -86,8 +74,8 @@
                </div>                            
         <div class= "row">   
 
-          <center>
-           <div class="wrap col-12">
+
+           <div class="wrap col-12 center">
               <div class="widget">
                <div class="fecha">
                 <p id="diaSemana" class="diaSemana"></p>
@@ -110,7 +98,7 @@
                 </div>
               </div>
               
-            </center>
+
               
                 
              </div>
@@ -140,6 +128,7 @@
               <div class= "box" id= "tarjetas-pokemon"> </div>
               <!-- </div> -->
                </div>
+              </div>
 
      
      
