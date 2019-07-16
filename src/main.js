@@ -1,4 +1,4 @@
-const data = POKEMON.pokemon;//Traer la data y guardarla en una variable
+const data = window.POKEMON.pokemon;//Traer la data y guardarla en una variable
 
 //const botonNombre = document.getElementById("ButtonA")
 const tarjetas =document.getElementById("tarjetas-pokemon");
@@ -112,5 +112,5 @@ orderName.addEventListener("change", () => {
    
     };
     actualizarHora();
-    var intervalo = setInterval(actualizarHora, 1000);
+    setInterval(actualizarHora, 1000);
    }());
