@@ -45,24 +45,25 @@ const pokeMock= [
       "Grass"
     ]
   },{
-    "id": 8,
-    "num": "008",
-    "name": "Wartortle",
+    "id": 6,
+    "num": "006",
+    "name": "Charizard",
     "type": [
-      "Water"
+      "Fire",
+      "Flying"
     ],
-    "height": "0.99 m",
-    "weight": "22.5 kg",
-    "candy": "Squirtle Candy",
-    "candy_count": 100,
+    "height": "1.70 m",
+    "weight": "90.5 kg",
+    "candy": "Charmander Candy",
     "egg": "Not in Eggs",
-    "spawn_chance": 0.034,
-    "avg_spawns": 3.4,
-    "spawn_time": "07:02",
-    "multipliers": [1.4],
+    "spawn_chance": 0.0031,
+    "avg_spawns": 0.31,
+    "spawn_time": "13:34",
+    "multipliers": null,
     "weaknesses": [
+      "Water",
       "Electric",
-      "Grass"
+      "Rock"
     ]
   },
 ];
@@ -97,7 +98,7 @@ describe('pokemon.filterType', () => {
   });
 
   it('returns `debería de retornar un arreglo con el tipo ingresado`', () => {
-    expect(window.pokemon.filterType(pokeMock,"Water")).toEqual([pokeMock[1,2]]);
+    expect(window.pokemon.filterType(pokeMock,"Water")).toEqual([pokeMock[1]]);
   });
 });
 
@@ -110,8 +111,8 @@ describe('pokemon.orderAzza', () => {
     expect(window.pokemon.orderAzza([]) instanceof Array).toBe(true);
   });
 
-  it('returns `debería de retornar un arreglo con el tipo ingresado`', () => {
-    expect(window.pokemon.orderAzza(pokeMock, "Z-A")).toEqual([pokeMock[2,1,0]]);
+  it('returns `debería de retornar un arreglo con el orden ingresado`', () => {
+    expect(window.pokemon.orderAzza(pokeMock, "Z-A")).toEqual([pokeMock[0]]);
   });
 });
 
