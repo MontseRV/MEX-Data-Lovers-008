@@ -1,4 +1,4 @@
-const data = POKEMON.pokemon;//Traer la data y guardarla en una variable
+const data = window.POKEMON.pokemon;//Traer la data y guardarla en una variable
 
 //const botonNombre = document.getElementById("ButtonA")
 const tarjetas =document.getElementById("tarjetas-pokemon");
@@ -24,10 +24,8 @@ imprimData(data);
 
 
 //filtrar por nombre
-
 const botonNombre = document.getElementById("boton-nombre");
 const pokemonName = document.getElementById("input-pokemon");
-
 
 botonNombre.addEventListener('click' ,() => {
 let nameResult= "";
@@ -112,5 +110,29 @@ orderName.addEventListener("change", () => {
    
     };
     actualizarHora();
-    var intervalo = setInterval(actualizarHora, 1000);
+    setInterval(actualizarHora, 1000);
    }());
+
+// Variables y funciones para el modal
+var modal = document.getElementById("poke-modal");
+var buttonInfo = document.getElementById("information");
+var span = document.getElementsByClassName("close")[0];
+
+// al click se muestra el modal 
+buttonInfo.addEventListener("click",()=> {
+  modal.style.display = "block";
+}
+);
+
+// al click en la X se cierra el modal
+span.addEventListener("click",()=> {
+  modal.style.display = "none";
+}
+);
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click",(event) =>{
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+);
